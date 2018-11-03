@@ -1,9 +1,14 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { FormComponent } from './form/form.component';
-import { MenuCoreComponent } from './core/core.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NgModule } from "@angular/core";
+import { CommonModule } from "@angular/common";
+import { CoreComponent } from "./core.component";
+import { HeaderComponent } from "../../components/header/header.component";
+import { TaskComponent } from "../../components/task/task.component";
+import { TasklistComponent } from "../../components/tasklist/tasklist.component";
+import { FormComponent } from "../../components/form/form.component";
+import { DragDropModule } from "@angular/cdk/drag-drop";
+import { ScrollingModule } from "@angular/cdk/scrolling";
+import { CdkTableModule } from "@angular/cdk/table";
+import { CdkTreeModule } from "@angular/cdk/tree";
 import {
   MatAutocompleteModule,
   MatBadgeModule,
@@ -42,7 +47,10 @@ import {
   MatTreeModule
 } from "@angular/material";
 
-const Imports = [
+const Exports = [
+  CdkTableModule,
+  CdkTreeModule,
+  DragDropModule,
   MatAutocompleteModule,
   MatBadgeModule,
   MatBottomSheetModule,
@@ -51,6 +59,7 @@ const Imports = [
   MatCardModule,
   MatCheckboxModule,
   MatChipsModule,
+  MatStepperModule,
   MatDatepickerModule,
   MatDialogModule,
   MatDividerModule,
@@ -72,23 +81,24 @@ const Imports = [
   MatSlideToggleModule,
   MatSnackBarModule,
   MatSortModule,
-  MatStepperModule,
   MatTableModule,
   MatTabsModule,
   MatToolbarModule,
   MatTooltipModule,
   MatTreeModule,
-  FormsModule,
-  ReactiveFormsModule,
-  CommonModule,
-  BrowserAnimationsModule
+  ScrollingModule,
+  
 ];
-const Components = [FormComponent, MenuCoreComponent];
-const Exports = [MenuCoreComponent];
 
 @NgModule({
-  imports: Imports,
-  exports: Exports,
-  declarations: Components
+  imports: Exports,
+  exports: [CoreComponent],
+  declarations: [
+    CoreComponent,
+    HeaderComponent,
+    TaskComponent,
+    TasklistComponent,
+    FormComponent
+  ]
 })
-export class MenuModule { }
+export class CoreModule {}
