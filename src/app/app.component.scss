@@ -1,0 +1,19 @@
+.wraper {
+    display: flex;
+    justify-content: space-between;
+}
+app-menu-core {
+    width: 30%;
+    min-height: 95vh;
+    background-color: aquamarine;
+
+}
+app-task-core {
+    width: 70%;
+    min-height: 95vh;
+    background-color: lightblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
