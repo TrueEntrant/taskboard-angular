@@ -9,6 +9,7 @@ import { DragDropModule } from "@angular/cdk/drag-drop";
 import { ScrollingModule } from "@angular/cdk/scrolling";
 import { CdkTableModule } from "@angular/cdk/table";
 import { CdkTreeModule } from "@angular/cdk/tree";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import {
   MatAutocompleteModule,
   MatBadgeModule,
@@ -46,8 +47,10 @@ import {
   MatTooltipModule,
   MatTreeModule
 } from "@angular/material";
+import { ReactiveFormsModule, FormsModule } from "@angular/forms";
+import { FooterComponent } from "../../components/footer/footer.component";
 
-const Exports = [
+const Imports = [
   CdkTableModule,
   CdkTreeModule,
   DragDropModule,
@@ -86,19 +89,24 @@ const Exports = [
   MatToolbarModule,
   MatTooltipModule,
   MatTreeModule,
+  CommonModule,
   ScrollingModule,
-  
+  ReactiveFormsModule,
+  FormsModule,
+  BrowserAnimationsModule
 ];
 
+const Declarations = [
+  HeaderComponent,
+  TaskComponent,
+  TasklistComponent,
+  FormComponent,
+  CoreComponent,
+  FooterComponent
+];
 @NgModule({
-  imports: Exports,
+  imports: Imports,
   exports: [CoreComponent],
-  declarations: [
-    CoreComponent,
-    HeaderComponent,
-    TaskComponent,
-    TasklistComponent,
-    FormComponent
-  ]
+  declarations: Declarations
 })
 export class CoreModule {}
