@@ -1,15 +1,15 @@
-import { NgModule } from "@angular/core";
-import { CommonModule } from "@angular/common";
-import { CoreComponent } from "./core.component";
-import { HeaderComponent } from "../../components/header/header.component";
-import { TaskComponent } from "../../components/task/task.component";
-import { TasklistComponent } from "../../components/tasklist/tasklist.component";
-import { FormComponent } from "../../components/form/form.component";
-import { DragDropModule } from "@angular/cdk/drag-drop";
-import { ScrollingModule } from "@angular/cdk/scrolling";
-import { CdkTableModule } from "@angular/cdk/table";
-import { CdkTreeModule } from "@angular/cdk/tree";
-import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { CoreComponent } from './core.component';
+import { HeaderComponent } from '../../components/header/header.component';
+import { TaskComponent } from '../../components/task/task.component';
+import { TasklistComponent } from '../../components/tasklist/tasklist.component';
+import { FormComponent } from '../../components/form/form.component';
+import { DragDropModule } from '@angular/cdk/drag-drop';
+import { ScrollingModule } from '@angular/cdk/scrolling';
+import { CdkTableModule } from '@angular/cdk/table';
+import { CdkTreeModule } from '@angular/cdk/tree';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {
   MatAutocompleteModule,
   MatBadgeModule,
@@ -46,9 +46,9 @@ import {
   MatToolbarModule,
   MatTooltipModule,
   MatTreeModule
-} from "@angular/material";
-import { ReactiveFormsModule, FormsModule } from "@angular/forms";
-import { FooterComponent } from "../../components/footer/footer.component";
+} from '@angular/material';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { FooterComponent } from '../../components/footer/footer.component';
 
 const Imports = [
   CdkTableModule,
@@ -96,14 +96,7 @@ const Imports = [
   BrowserAnimationsModule
 ];
 
-const Declarations = [
-  HeaderComponent,
-  TaskComponent,
-  TasklistComponent,
-  FormComponent,
-  CoreComponent,
-  FooterComponent
-];
+const Declarations = [HeaderComponent, TaskComponent, TasklistComponent, FormComponent, CoreComponent, FooterComponent];
 @NgModule({
   imports: Imports,
   exports: [CoreComponent],

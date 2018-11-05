@@ -1,13 +1,10 @@
-<app-header></app-header>
+<app-header (addTask)="clickHandler($event)"></app-header>
 
 <!-- <app-task></app-task> -->
 
 <mat-drawer-container class="core-container" autosize>
   <div class="task-content">
       <app-tasklist></app-tasklist>
-    <button type="button" class="add-task-btn" mat-button (click)="drawer.toggle()">
-      Add new task
-    </button>
   </div>
   <mat-drawer position="end" #drawer class="form-container" mode="side">
     <app-form></app-form>
