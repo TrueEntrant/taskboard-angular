@@ -1,12 +1,7 @@
-.task {
-  width: 30%;
-  max-width: 300px;
-  margin: 3.8%;
-}
+
 .task-list-wraper {
-    display: flex;
-    // justify-content: space-evenly;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
 }
 .example-header-image {
   background-image: url("https://material.angular.io/assets/img/examples/shiba1.jpg");

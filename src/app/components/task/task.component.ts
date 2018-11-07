@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-task',
@@ -6,10 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./task.component.scss']
 })
 export class TaskComponent implements OnInit {
+  @Input() data: object;
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit() {
-  }
-
+  ngOnInit() {}
 }

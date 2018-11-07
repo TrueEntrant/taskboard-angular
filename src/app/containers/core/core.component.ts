@@ -1,4 +1,5 @@
-import { Component, OnInit, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
+import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
+import { MatDrawer } from '@angular/material';
 
 @Component({
   selector: 'app-core',
@@ -6,18 +7,15 @@ import { Component, OnInit, ViewChild, ElementRef, AfterViewInit } from '@angula
   styleUrls: ['./core.component.scss']
 })
 export class CoreComponent implements OnInit, AfterViewInit {
-  @ViewChild('drawer') public drawer: ElementRef;
-  constructor() { }
+  @ViewChild('drawer')
+  public drawer: MatDrawer;
+  constructor() {}
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
-  ngAfterViewInit() {
-  }
+  ngAfterViewInit() {}
 
   public clickHandler(data: boolean) {
-    console.log('parent trigered', data);
-    // this.rd.invokeElementMethod(this.drawer.nativeElement, 'toggle');
     this.drawer.toggle();
   }
 }

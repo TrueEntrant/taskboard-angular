@@ -1,6 +1,6 @@
-import {Component, OnInit} from '@angular/core';
-import {FormControl,FormGroup, FormGroupDirective, NgForm, FormBuilder} from '@angular/forms';
-import {ErrorStateMatcher} from '@angular/material/core';
+import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup, FormGroupDirective, NgForm, FormBuilder } from '@angular/forms';
+import { ErrorStateMatcher } from '@angular/material/core';
 
 /** Error when invalid control is dirty, touched, or submitted. */
 export class MyErrorStateMatcher implements ErrorStateMatcher {
@@ -14,9 +14,9 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
 @Component({
   selector: 'app-form',
   templateUrl: './form.component.html',
-  styleUrls: ['./form.component.scss'],
+  styleUrls: ['./form.component.scss']
 })
-export class FormComponent implements OnInit{
+export class FormComponent implements OnInit {
   public registerForm: FormGroup;
   // @Output() public submitEvt: EventEmitter<boolean> = new EventEmitter<boolean>();
 
@@ -31,22 +31,22 @@ export class FormComponent implements OnInit{
   get taskName() {
     return this.registerForm.get('taskName');
   }
-   get todo() {
+  get todo() {
     return this.registerForm.get('todo');
   }
-   get timeFrom() {
+  get timeFrom() {
     return this.registerForm.get('timeFrom');
   }
-   get timeTo() {
+  get timeTo() {
     return this.registerForm.get('timeTo');
   }
-  
+
   private createFromGroup() {
     return new FormGroup({
-      taskName: new FormControl('',[]),
-      todo: new FormControl('',[]),
-      timeFrom: new FormControl('',[]),
-      timeTo: new FormControl('',[])
-    })
+      taskName: new FormControl('', []),
+      todo: new FormControl('', []),
+      timeFrom: new FormControl('', []),
+      timeTo: new FormControl('', [])
+    });
   }
 }
