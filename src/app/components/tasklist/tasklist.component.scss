@@ -1,9 +1,30 @@
-
 .task-list-wraper {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
 }
 .example-header-image {
-  background-image: url("https://material.angular.io/assets/img/examples/shiba1.jpg");
+  background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
   background-size: cover;
+}
+.head {
+
+}
+.todo,
+.inprogress,
+.done {
+  text-transform: uppercase;
+  color: white;
+  text-align: center;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  margin: 10px 5px 0 5px;
+}
+.todo {
+  background-color: rgb(109, 30, 30);
+}
+.inprogress {
+  background-color: rgb(45, 77, 45);
+}
+.done {
+  background-color: rgb(47, 47, 109);
 }

@@ -1,55 +1,39 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
+import { ListOfTasksService } from '../../shared/services/task.list.servise';
+import { Task } from '../../shared/model/task.model';
 
 @Component({
   selector: 'app-tasklist',
   templateUrl: './tasklist.component.html',
   styleUrls: ['./tasklist.component.scss']
 })
-export class TasklistComponent implements OnInit {
-  public items = [
-    {
-      type: 'todo',
-      creator: 'Admin',
-      pinedto: 'Vasya',
-      description: `The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
-    A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
-    bred for hunting.`
-    },
-    {
-      type: 'done',
-      creator: 'Admin',
-      pinedto: 'Vasya',
-      description: `The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
-    A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
-    bred for hunting.`
-    },
-    {
-      type: 'todo',
-      creator: 'Admin',
-      pinedto: 'Vasya',
-      description: `The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
-    A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
-    bred for hunting.`
-    },
-    {
-      type: 'inprogress',
-      creator: 'Admin',
-      pinedto: 'Vasya',
-      description: `The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
-    A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
-    bred for hunting.`
-    },
-    {
-      type: 'archive',
-      creator: 'Admin',
-      pinedto: 'Vasya',
-      description: `The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
-    A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
-    bred for hunting.`
-    }
-  ];
+export class TasklistComponent implements OnInit, AfterViewInit {
+  public todo: Array<Task> = [];
+  public inprogress: Array<Task> = [];
+  public done: Array<Task> = [];
 
-  constructor() {}
+  constructor(private taskList: ListOfTasksService) {}
 
   ngOnInit() {}
+  ngAfterViewInit() {
+    const list = this.taskList.getListOfTasks();
+    list.forEach(item => {
+      switch (item.type) {
+        case 'todo': {
+          this.todo.push(item);
+          break;
+        }
+        case 'inprogress': {
+          this.inprogress.push(item);
+          break;
+        }
+        case 'done': {
+          this.done.push(item);
+          break;
+        }
+        default:
+          break;
+      }
+    });
+  }
 }

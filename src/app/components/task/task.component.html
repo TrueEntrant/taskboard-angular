@@ -1,15 +1,13 @@
 <mat-card class="task">
+  <span class="head"></span>
   <mat-card-header>
-    <div mat-card-avatar class="example-header-image"></div>
     <mat-card-title>{{data.creator}} to {{data.pinedto}}</mat-card-title>
     <mat-card-subtitle>Type  : {{data.type}}</mat-card-subtitle>
   </mat-card-header>
-  <mat-card-content>
-    <p>
-      {{data.description}}
-    </p>
-  </mat-card-content>
+  
   <mat-card-actions>
-    <button class="more-btn" mat-button>More...</button>
+    <button class="more-btn" mat-stroked-button>Task 1</button>
+    <button class="more-btn" mat-stroked-button>Task 2</button>
+    <button class="more-btn" mat-stroked-button>Task 3</button>
   </mat-card-actions>
 </mat-card>

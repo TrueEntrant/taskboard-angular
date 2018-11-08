@@ -8,6 +8,13 @@
       Email is <strong>required</strong>  
     </mat-error>
   </mat-form-field>
+  <mat-form-field>
+      <mat-select placeholder="Favorite food" [(ngModel)]="selectedValue" name="food">
+        <mat-option *ngFor="let task of list" [value]="task">
+          {{food.viewValue}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
   <mat-form-field class="full-width">
     <input matInput placeholder="Favorite food" value="">
   </mat-form-field>
@@ -17,7 +24,6 @@
   <mat-form-field class="full-width">
     <input matInput placeholder="Favorite food" value="">
   </mat-form-field>
-  <mat-form-field class="full-width">
-    <input matInput placeholder="Favorite food" value="">
-  </mat-form-field>
+  <button class="add-btn" mat-stroked-button>Add</button>
+
 </form>

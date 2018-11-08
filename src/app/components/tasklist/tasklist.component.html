@@ -1,20 +1,18 @@
+<h1 class="todo">todo</h1>
 <div class="task-list-wraper">
-  <div *ngFor="let item of items">
-    <div *ngIf="item.type === 'todo'; else null" class="todo">
-      <h1>todo</h1>
-      <app-task [data]='item'></app-task>
-    </div>
+  <div *ngFor="let item of todo" >
+    <app-task [data]="item"></app-task>
   </div>
-  <div *ngFor="let item of items">
-    <div *ngIf="item.type === 'done'; else null" class="todo">
-      <h1>done</h1>
-      <app-task [data]='item'></app-task>
-    </div>
+</div>
+<h1 class="inprogress">done</h1>
+<div class="task-list-wraper">
+  <div *ngFor="let item of inprogress" >
+    <app-task [data]="item"></app-task>
   </div>
-  <div *ngFor="let item of items">
-    <div *ngIf="item.type === 'inprogress'; else null" class="todo">
-      <h1>inprogress</h1>
-      <app-task [data]='item'></app-task>
-    </div>
+</div>
+<h1 class="done">inprogress</h1>
+<div class="task-list-wraper">
+  <div *ngFor="let item of done" >
+    <app-task [data]="item"></app-task>
   </div>
 </div>

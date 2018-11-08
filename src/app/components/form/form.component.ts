@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, FormGroupDirective, NgForm, FormBuilder } from '@angular/forms';
 import { ErrorStateMatcher } from '@angular/material/core';
+import { ListOfTasksService } from '../../shared/services/task.list.servise';
+import { Task } from '../../shared/model/task.model';
 
 /** Error when invalid control is dirty, touched, or submitted. */
 export class MyErrorStateMatcher implements ErrorStateMatcher {
@@ -20,12 +22,13 @@ export class FormComponent implements OnInit {
   public registerForm: FormGroup;
   // @Output() public submitEvt: EventEmitter<boolean> = new EventEmitter<boolean>();
 
-  constructor(private fb: FormBuilder) {}
-
+  constructor(private fb: FormBuilder, public tasks: ListOfTasksService) {}
   public matcher = new MyErrorStateMatcher();
+  public list: Array<Task> = [];
 
   ngOnInit() {
     this.registerForm = this.fb.group(this.createFromGroup().controls);
+    this.list = this.tasks.getListOfTasks();
   }
 
   get taskName() {

@@ -9,6 +9,8 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
 import { ScrollingModule } from '@angular/cdk/scrolling';
 import { CdkTableModule } from '@angular/cdk/table';
 import { CdkTreeModule } from '@angular/cdk/tree';
+import { ListOfTasksService } from '../../shared/services/task.list.servise';
+
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {
   MatAutocompleteModule,
@@ -96,10 +98,11 @@ const Imports = [
   BrowserAnimationsModule
 ];
 
-const Declarations = [HeaderComponent, TaskComponent, TasklistComponent, FormComponent, CoreComponent, FooterComponent];
+const Declarations = [ HeaderComponent, TaskComponent, TasklistComponent, FormComponent, CoreComponent, FooterComponent];
 @NgModule({
   imports: Imports,
   exports: [CoreComponent],
+  providers: [ListOfTasksService],
   declarations: Declarations
 })
 export class CoreModule {}
